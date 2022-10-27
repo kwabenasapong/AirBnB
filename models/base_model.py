@@ -1,7 +1,7 @@
 from datetime import datetime
 from uuid import uuid4
-from engine.file_storage import FileStorage
-from __init__ import storage
+from models.engine.file_storage import FileStorage
+from models.__init__ import storage
 
 
 class BaseModel(object):

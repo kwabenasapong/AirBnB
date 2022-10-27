@@ -3,7 +3,7 @@ Store instances created in JSON format in the database
 '''
 
 import json
-from base_model import BaseModel
+#from base_model import BaseModel
 
 
 class FileStorage():
