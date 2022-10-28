@@ -3,7 +3,6 @@ Store instances created in JSON format in the database
 '''
 
 import json
-#from models.base_model import BaseModel
 
 
 class FileStorage():
@@ -35,18 +34,22 @@ class FileStorage():
                 f.write(json_fmt)
          
     def reload(self):
-        pass 
         '''deserializes the JSON file to __objects'''
-        
+        pass
+        '''try:
+            with open(FileStorage.__file_path, 'r', encoding='utf-8') as f:
+                objs_dict = {}
+                objs_dict = json.load(f)
+                
+        except FileNotFoundError:
+            return'''
 
     @staticmethod
-    def to_json_string(dict_obj):
-        '''returns json string rep of dict arg'''
-        if dict_obj is not None:
-            return json.dumps(dict_obj)
+    def from_json_string(j_string):
+        if j_string is not None or j_string != '':
+            dict_fmt = json.loads(j_string)
+            return dict_fmt
         else:
-            return "[]"
+            return
 
-    @classmethod
-    def save_to_file():
-        pass   
+    
