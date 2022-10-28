@@ -1,6 +1,6 @@
 from datetime import datetime
 from uuid import uuid4
-from engine.file_storage import FileStorage
+from models.engine.file_storage import FileStorage
 from models import storage
 
 
@@ -31,10 +31,7 @@ class BaseModel(object):
                     if key in ('created_at', 'updated_at'):
                         setattr(self, key, datetime.fromisoformat(str(value)))
                     else:
-                        setattr(self, key, value)
-        
-        
-        
+                        setattr(self, key, value)             
 
     def __str__(self):
         '''
@@ -71,5 +68,5 @@ class BaseModel(object):
         new_dict = self.__dict__.copy()
         new_dict["__class__"] = self.__class__.__name__
         new_dict["created_at"] = self.created_at.isoformat()
-        new_dict["update_at"] = self.updated_at.isoformat()             
+        new_dict["updated_at"] = self.updated_at.isoformat()             
         return new_dict
