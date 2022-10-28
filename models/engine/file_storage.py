@@ -27,17 +27,17 @@ class FileStorage():
 
     def save(self): 
         '''serializes __objects to the JSON file'''
-        with open(self.__file_path, "w", encoding="utf-8") as f:
+        '''with open(self.__file_path, "w", encoding="utf-8") as f:
             dict_store = {}
             for key, value in self.__objects.items():
                 dict_store[key] = value.to_dict()
-                json.dump(dict_store, f)
+                json.dump(dict_store, f)'''
             
     def reload(self): 
         '''deserializes the JSON file to __objects'''
-        try:
+       ''' try:
             with open(self.__file_path, "r", encoding="utf-8") as f:
                 for obj in json.load(f).values():
                     self.new(eval(obj["__class__"](**obj)))
         except FileNotFoundError:
-            return
+            return'''
